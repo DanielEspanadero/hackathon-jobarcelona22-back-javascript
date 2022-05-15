@@ -1,4 +1,6 @@
 import express from 'express';
+import cors from 'cors';
+import { connectDB } from '../db/config';
 
 import routerAuth from '../routes/auth';
 
@@ -7,17 +9,26 @@ class Server {
         this.app = express();
         this.port = process.env.PORT;
         this.path = {
-            signUp: '/signup',
-            signin: '/signin'
+            auth: '/auth',
         }
 
-
+        this.middleware();
+        this.dbConnect();
         this.route();
         this.listen();
     };
 
+    middleware(){
+        this.app.use(cors());
+        this.app.use(express.json());
+    }
+
+    async dbConnect() {
+        await connectDB();
+    }
+
     route() {
-        this.app.use(this.path.signUp, routerAuth);
+        this.app.use(this.path.auth, routerAuth);
     }
 
     listen() {

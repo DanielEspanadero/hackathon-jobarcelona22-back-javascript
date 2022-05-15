@@ -20,7 +20,8 @@ export const signUp = async (req, res) => {
             username,
             email,
             password: await User.encryptPassword(password),
-            roles
+            roles,
+            date
         });
 
         // Save to DB.

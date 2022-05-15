@@ -4,8 +4,8 @@
   "description": "Qualifying challenge for the IT JUNIOR Hackathon - JOBarcelona'22 organized by Nuwe that will take place at the Camp Nou on May 31, 2022.",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app",
-    "dev": "nodemon src/app"
+    "dev": "nodemon src/app --exec babel-node",
+    "start": "babel-node src/app"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,11 @@
     "express-validator": "^6.14.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.10",
+    "@babel/node": "^7.17.10",
+    "@babel/preset-env": "^7.17.10"
   }
 }

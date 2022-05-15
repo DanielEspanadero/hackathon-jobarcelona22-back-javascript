@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
 
-export const userSchema = new Schema({
+export const UserSchema = new Schema({
     username: {
         type: String,
         unique: true,
@@ -35,4 +35,4 @@ UserSchema.statics.comparePassword = async (password, receivedPassword) => {
     return await bcryptjs.compare(password, receivedPassword);
 };
 
-export const User = model('User', userSchema);
+export const User = model('User', UserSchema);

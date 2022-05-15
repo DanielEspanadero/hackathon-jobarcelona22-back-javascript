@@ -26,10 +26,13 @@ export const userSchema = new Schema({
     }
 });
 
-userSchema.method('toJSON', function () {
-    const { __v, _id, password, ...object } = this.toObject();
-    object.uid = _id;
-    return object;
-});
+UserSchema.statics.encryptPassword = async (password) => {
+    const salt = await bcryptjs.genSalt(10);
+    return await bcryptjs.hash(password, salt)
+}
+
+UserSchema.statics.comparePassword = async (password, receivedPassword) => {
+    return await bcryptjs.compare(password, receivedPassword);
+};
 
 export const User = model('User', userSchema);

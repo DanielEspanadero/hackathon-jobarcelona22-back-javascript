@@ -1,11 +1,9 @@
 import { Schema, model } from 'mongoose';
 
+export const roles = ['user', 'admin'];
+
 const RoleSchema = new Schema({
-    name: {
-        type: String,
-        enum: ['admin, user'],
-        default: 'user'
-    }
+    name: String,
 }, {
     versionkey: false
 });

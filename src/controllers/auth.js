@@ -1,6 +1,6 @@
-import bcryptjs from "bcryptjs";
 import { User } from "../models/User";
-import { generateAccessToken } from "../helpers/generate-jwt";
+import { Role } from "../models/Roles";
+import jwt from 'jsonwebtoken';
 
 export const signUp = async (req, res) => {
     try {
@@ -16,7 +16,7 @@ export const signUp = async (req, res) => {
          };
 
         //  Create user.
-        const newUser = new UserSchema({
+        const newUser = await new User({
             username,
             email,
             password: await User.encryptPassword(password),
@@ -24,11 +24,20 @@ export const signUp = async (req, res) => {
             date
         });
 
-        // Save to DB.
-        const saveUser = await newUser.save();
+        // checking for roles
+        if (req.body.roles) {
+            const foundRoles = await Role.find({ name: { $in: roles } });
+            newUser.roles = foundRoles.map((role) => role._id);
+        } else {
+            const role = await Role.findOne({ name: "user" });
+            newUser.roles = [role._id];
+        }
 
-        // Get Token.
-        const token = await generateAccessToken(saveUser.id);
+        // Save to DB.
+        const savedUser = await newUser.save();
+
+        // Get token.
+        const token = jwt.sign({ id: savedUser._id }, process.env.SECRETORPRIVATEKEY, { expiresIn: '4h' });
 
 
         res.status(200).json({
@@ -36,18 +45,18 @@ export const signUp = async (req, res) => {
             token
         })
     } catch (error) {
+        console.log(error);
         res.status(500).json({
             msg: error
         });
     };
 };
 
-export const signIn = async (req, res) => {
+export const logIn = async (req, res) => {
     try {
-        const { email, password } = req.body;
 
         // Check if the user exists with the email
-        const userDB = User.findOne({email});
+        const userDB = await User.findOne({email: req.body.email}).populate('roles');
 
         if(!userDB){
             return res.status(403).json({
@@ -56,16 +65,17 @@ export const signIn = async (req, res) => {
         };
 
         // Validate password.
-        const validPassword = bcryptjs.compareSync(password, userDB.password);
+        const validPassword = await User.comparePassword(req.body.password, userDB.password);
 
         if(!validPassword){
             return res.status(403).json({
+                token: null,
                 msg: 'The password you entered is not correct.'
             });
         };
 
         // Get token.
-        const token = await generateAccessToken(userDB.id, userDB.roles);
+        const token = jwt.sign({ id: userDB._id }, process.env.SECRETORPRIVATEKEY, { expiresIn: '4h' });
 
         res.status(200).json({
             user: userDB,
@@ -73,6 +83,7 @@ export const signIn = async (req, res) => {
         });
 
     } catch (error) {
+        throw new Error(error);
         res.status(500).json({
             msg: error
         });

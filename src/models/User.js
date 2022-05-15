@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose';
+import bcryptjs from 'bcryptjs';
 
 export const UserSchema = new Schema({
     username: {
@@ -18,8 +19,7 @@ export const UserSchema = new Schema({
     },
     roles: [{
         type: Schema.Types.ObjectId,
-        ref: "Role",
-        default: ['user']
+        ref: "Role"
     }],
     date: {
         type: Date

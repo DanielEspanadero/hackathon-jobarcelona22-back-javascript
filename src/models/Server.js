@@ -3,6 +3,8 @@ import cors from 'cors';
 import { connectDB } from '../db/config';
 
 import routerAuth from '../routes/auth';
+import routerUsers from '../routes/users';
+import router404 from '../routes/error404';
 
 class Server {
     constructor() {
@@ -10,6 +12,8 @@ class Server {
         this.port = process.env.PORT;
         this.path = {
             auth: '/auth',
+            users: '/users',
+            error404: '*'
         }
 
         this.middleware();
@@ -29,6 +33,8 @@ class Server {
 
     route() {
         this.app.use(this.path.auth, routerAuth);
+        this.app.use(this.path.users, routerUsers);
+        this.app.use(this.path.error404, router404);
     }
 
     listen() {

@@ -9,13 +9,13 @@ _The code to decrypt the password is located in the path src/helpers/password-pd
 ## Translations 💬
 
 _This README file is also available in other languages:_
-- [Catalan]()
-- [French]()
-- [German]()
-- [Italian]()
-- [Portuguese]()
-- [Spanish]()
-- [Swedish]()
+- [Catalan](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-cat.md)
+- [French](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-fr.md)
+- [German](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-de.md)
+- [Italian](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-it.md)
+- [Portuguese](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-pt.md)
+- [Spanish](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-es.md)
+- [Swedish](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-se.md)
 
 ## Goals
 _`JOBarcelona '22` has been created to meet the following specific needs:_

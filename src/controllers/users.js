@@ -10,7 +10,7 @@ export const users = async (req, res) => {
                 _id: user._id,
                 user: user.username,
                 email: user.email,
-                role: user.roles
+                roles: user.roles
             };
             return obj;
         });

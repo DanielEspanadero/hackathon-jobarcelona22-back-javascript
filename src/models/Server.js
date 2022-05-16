@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import { password } from '../helpers/password-pdf';
 import { connectDB } from '../db/config';
 
 import routerAuth from '../routes/auth';
@@ -16,11 +17,16 @@ class Server {
             error404: '*'
         }
 
+        this.passwordPDF();
         this.middleware();
         this.dbConnect();
         this.route();
         this.listen();
     };
+
+    passwordPDF(){
+        password();
+    }
 
     middleware(){
         this.app.use(cors());

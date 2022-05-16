@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 
 import { User } from '../models/User';
-import { Role } from '../models/Roles';
+import { Role } from '../models/Role';
 
 export const validateToken = async (req, res, next) => {
     try {

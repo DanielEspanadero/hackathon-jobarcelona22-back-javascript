@@ -34,7 +34,6 @@ export const password = () => {
 
     console.log(`The addition of the digits in backend department is ${addition3}\n`);
 
-
     // Frontend Department
     let frontendDepartment = BigInt(Math.pow(2, 170)).toString();
     console.log(`Frontend Department - 2 raised to 170: ${frontendDepartment}`);
@@ -46,9 +45,7 @@ export const password = () => {
     }
     console.log(`The addition of the digits in frontend department is ${addition4}\n`);
 
-
     // Security Department
-
     let securityDepartment = BigInt(Math.pow(2, 50)).toString();
     console.log(`Security Department - 2 raised to 50: ${securityDepartment
 }`);
@@ -61,7 +58,6 @@ export const password = () => {
     console.log(`The addition of the digits in security department is ${addition5}\n`);
 
     // All Departments
-
     let allDepartments = BigInt(Math.pow(2, 800)).toString();
     console.log(`All Departments - 2 raised to 800: ${allDepartments
 }\n`);

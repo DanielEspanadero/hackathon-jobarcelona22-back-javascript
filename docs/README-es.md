@@ -14,7 +14,7 @@ _Este archivo README también está disponible en otros idiomas:_
 - [Alemán](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-de.md)
 - [Italiano](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-it.md)
 - [Portugués](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-pt.md)
-- [Español](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-es.md)
+- [Inglés](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/README.md)
 - [Sueco](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-se.md)
 
 ## Metas

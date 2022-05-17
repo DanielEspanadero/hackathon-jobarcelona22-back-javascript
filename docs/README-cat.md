@@ -9,7 +9,7 @@ _El codi per desxifrar la contrasenya es troba a la ruta `src/helpers/password-p
 ## Traduccions 💬
 
 _Aquest fitxer README també està disponible en altres idiomes:_
-- [Català](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-cat.md)
+- [Anglès](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/README.md)
 - [francès](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-fr.md)
 - [Alemany](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-de.md)
 - [Italià](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-it.md)

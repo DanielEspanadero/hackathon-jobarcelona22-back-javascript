@@ -15,7 +15,7 @@ _Denna README-fil är även tillgänglig på andra språk:_
 - [italienska](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-it.md)
 - [Portugisiska](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-pt.md)
 - [spanska](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-es.md)
-- [svenska](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/README-se.md)
+- [engelsk](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/README.md)
 
 ## Mål
 _`JOBarcelona '22' har skapats för att möta följande specifika behov:_

@@ -1,10 +1,10 @@
 # 👨🏻‍💻 JOBarcelona '22 | Back-end 👨🏻‍💻
 
-_This package has been developed from scratch by [Daniel](https://github.com/DanielEspanadero)._
+_This package has been developed from scratch by [Daniel Españadero](https://github.com/DanielEspanadero)._
 
 _This is one of the qualifying challenges that are part of the [JOBarcelona '22 online hackathon](https://nuwe.io/challenge/jobarcelona-'22-back-end). The result of this challenge will allow the winners to attend the face-to-face hackathon that will take place on May 31, 2022 at the Camp Nou._
 
-_The code to decrypt the password is located in the path src/helpers/password-pdf.js 😉_
+_The code to decrypt the password is located in the path `src/helpers/password-pdf.js` 😉_
 
 ## Translations 💬
 
@@ -32,6 +32,8 @@ _✅ Task 5 → In addition, a route is needed that returns the entire list of u
 
 _✅ Task 6 → A user has as mandatory parameters: username (must be unique), email (must follow the email pattern and be unique), password (must have a minimum of 8 characters, include a capital letter and a number). - COMPLETED_
 
+_✅ EXTRA TASK → Crack PDF password - COMPLETED_
+
 ## Starting 🚀
 
 _These instructions will allow you to get a working copy of the project on your local machine for development and testing purposes._
@@ -42,7 +44,6 @@ _For the project to work correctly, it is recommended to have a series of progra
 - [Visual Studio Code](https://code.visualstudio.com/download)
 - [Node.js and npm](https://nodejs.org/es/)
 - [MongoDB](https://docs.mongodb.com/manual/installation/)
-- [MySQL Server](https://dev.mysql.com/downloads/)
 
 ### Installation 🔧
 
@@ -69,6 +70,18 @@ _Or you can also enter the command for the development version._
 ```
 npm run dev
 ```
+
+## when it start 🤔
+_When the application starts, it will do the calculation to decrypt the PDF key, it will start the server and the users in the database and it will create the user with the admin role, which will have the next credentials:_
+```
+{
+    "username": "jobx_admin",
+    "email": "admin@jobx.com",
+    "password": "aJOBX90_min25k.",
+    "roles": ["admin"]
+}
+```
+_The users that are entered by default in the database cannot be used to login, only in read mode, to test a user without an administrator role, create one from scratch._
 
 ## Endpoints 💻
 
@@ -123,4 +136,4 @@ _I have used semantic versioning [SemVer](http://semver.org/) for this applicati
 
 ## License 📄
 
-_This project is licensed under the MIT License - see the file [LICENSE](https://github.com/DanielEspanadero/nodeInitialDemo/blob/dev-teams/LICENSE) for details._
+_This project is licensed under the MIT License - see the file [LICENSE](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/LICENSE) for details._

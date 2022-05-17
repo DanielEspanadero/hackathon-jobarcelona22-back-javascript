@@ -55,7 +55,7 @@ npm install
 
 _For the project to work correctly you have to enable the environment variables, for this you have to create a file with the name .env and enter the data you have in the .config.env template_
 
-![Demo](https://github.com/DanielEspanadero/nodeInitialDemo/blob/dev-teams/docs/dev-team-mysql-env.png)
+![Demo](https://github.com/DanielEspanadero/hackathon-jobarcelona22-back-javascript/blob/main/docs/env.png)
 
 ## Commands to run ⌨️
 

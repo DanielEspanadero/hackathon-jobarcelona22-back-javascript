@@ -1,7 +1,10 @@
 import express from 'express';
 import cors from 'cors';
-import { password } from '../helpers/password-pdf';
+
 import { connectDB } from '../db/config';
+
+import { password } from '../helpers/password-pdf';
+import { createRoles, createUsers, createAdmin } from '../libs/initial-setup';
 
 import routerAuth from '../routes/auth';
 import routerUsers from '../routes/users';
@@ -17,15 +20,18 @@ class Server {
             error404: '*'
         }
 
-        this.passwordPDF();
+        this.run();
         this.middleware();
         this.dbConnect();
         this.route();
         this.listen();
     };
 
-    passwordPDF(){
+    run(){
         password();
+        createRoles();
+        createUsers();
+        createAdmin();
     }
 
     middleware(){

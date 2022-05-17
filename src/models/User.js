@@ -19,12 +19,16 @@ export const UserSchema = new Schema({
     },
     roles: [{
         type: Schema.Types.ObjectId,
-        ref: "Role"
+        ref: 'Role',
     }],
     date: {
         type: Date
     }
-});
+},
+    {
+        timestamps: true,
+        versionKey: false
+    });
 
 UserSchema.statics.encryptPassword = async (password) => {
     const salt = await bcryptjs.genSalt(10);

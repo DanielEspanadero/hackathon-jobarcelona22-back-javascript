@@ -1,5 +1,5 @@
-import { User } from "../models/User";
-import { Role } from "../models/Role";
+import { User } from '../models/User';
+import { Role } from '../models/Role';
 import jwt from 'jsonwebtoken';
 
 export const signUp = async (req, res) => {
@@ -29,7 +29,7 @@ export const signUp = async (req, res) => {
             const foundRoles = await Role.find({ name: { $in: roles } });
             newUser.roles = foundRoles.map((role) => role._id);
         } else {
-            const role = await Role.findOne({ name: "user" });
+            const role = await Role.findOne({ name: 'user' });
             newUser.roles = [role._id];
         }
 
@@ -83,7 +83,6 @@ export const logIn = async (req, res) => {
         });
 
     } catch (error) {
-        throw new Error(error);
         res.status(500).json({
             msg: error
         });

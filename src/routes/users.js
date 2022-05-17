@@ -1,7 +1,7 @@
-import { Router } from "express";
-import { users } from "../controllers/users";
+import { Router } from 'express';
+import { users } from '../controllers/users';
 
-import { validateToken, isAdmin } from "../middlewares/validate-jwt";
+import { validateToken, isAdmin } from '../middlewares/validate-jwt';
 
 const router = Router();
 

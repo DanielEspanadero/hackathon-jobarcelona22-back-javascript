@@ -1,3 +1,5 @@
+
+// This function is responsible for decrypting the password of the PDF.
 export const password = () => {
 
     // Product Department

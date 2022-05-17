@@ -1,6 +1,7 @@
 import { User } from '../models/User';
 import { ROLES } from '../models/Role';
 
+// This function ensures that there are no duplicate usernames or emails.
 export const checkDuplicateUsernameOrEmail = async (req, res, next) => {
     try {
         const user = await User.findOne({ username: req.body.username });
@@ -20,6 +21,7 @@ export const checkDuplicateUsernameOrEmail = async (req, res, next) => {
     }
 };
 
+// This function ensures that the assigned role exists.
 export const checkRolesExisted = (req, res, next) => {
     if (req.body.roles) {
         for (let i = 0; i < req.body.roles.length; i++) {

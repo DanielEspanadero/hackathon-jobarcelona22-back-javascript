@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken';
 import { User } from '../models/User';
 import { Role } from '../models/Role';
 
+// Validation that the entered token is correct.
 export const validateToken = async (req, res, next) => {
     try {
         const token = req.header('authorization');
@@ -31,6 +32,7 @@ export const validateToken = async (req, res, next) => {
     };
 };
 
+// This function ensures that the person who wants to access the endpoint has the user role.
 export const isAdmin = async (req, res, next) => {
 
     try {
@@ -41,9 +43,8 @@ export const isAdmin = async (req, res, next) => {
             if (roles[i].name === 'admin') {
                 next();
                 return;
-            }
-        }
-
+            };
+        };
         return res.status(403).json({ 
             message: 'Require Admin Role!' 
         });
@@ -52,5 +53,5 @@ export const isAdmin = async (req, res, next) => {
         return res.status(500).json({
             message: error 
         });
-    }
+    };
 };

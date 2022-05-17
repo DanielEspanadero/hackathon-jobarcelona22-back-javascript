@@ -5,6 +5,7 @@ import InitialUsers from '../db/jobx-users.json';
 
 import bcrypt from 'bcryptjs';
 
+// Creation of roles in the event that they have not already been created.
 export const createRoles = async () => {
     try {
         const count = await Role.estimatedDocumentCount();
@@ -23,10 +24,11 @@ export const createRoles = async () => {
         console.log(`Roles successfully added to the database.`);
 
     } catch (error) {
-        console.error(error);
+        console.error('Error creating the roles in the database.');
     }
 };
 
+// Add the users from the JSON to the database.
 export const createUsers = async () => {
     try {
         const count = await User.estimatedDocumentCount();
@@ -34,18 +36,16 @@ export const createUsers = async () => {
         if (count > 0) {
             return;
         };
-
         console.log(`Adding users to the database...`);
-
         await User.create(InitialUsers);
-
         console.log(`Users added to the database successfully.`);
 
     } catch (error) {
-
+        console.error('Error creating users in the database.');
     }
 };
 
+// Creation of the administrator user with the credentials provided in the PDF.
 export const createAdmin = async () => {
     // check for an existing admin user
     const user = await User.findOne({ email: 'admin@jobx.com' });
@@ -61,5 +61,5 @@ export const createAdmin = async () => {
             roles: roles.map((role) => role._id),
         });
         console.log('Admin User Created!')
-    }
-}
+    };
+};

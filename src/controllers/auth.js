@@ -5,23 +5,13 @@ import jwt from 'jsonwebtoken';
 export const signUp = async (req, res) => {
     try {
         const { username, email, password, roles } = req.body;
-        const date = new Date();
-
-         // Check if the email exists.
-         const existEmail = await User.findOne({email});
-         if(existEmail){
-             return res.status(400).json({
-                 msg: 'That email is already registered.'
-             });
-         };
 
         //  Create user.
         const newUser = await new User({
             username,
             email,
             password: await User.encryptPassword(password),
-            roles,
-            date
+            roles
         });
 
         // checking for roles

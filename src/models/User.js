@@ -20,10 +20,7 @@ export const UserSchema = new Schema({
     roles: [{
         type: Schema.Types.ObjectId,
         ref: 'Role',
-    }],
-    date: {
-        type: Date
-    }
+    }]
 },
     {
         timestamps: true,
